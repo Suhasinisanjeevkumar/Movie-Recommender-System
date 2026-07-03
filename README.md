@@ -2,55 +2,42 @@
 
 <img src="demo/6.jpeg" alt="workflow" width="70%">
 
-Recommendation systems are becoming increasingly important in today’s extremely busy world. People are always short on time with the myriad tasks they need to accomplish in the limited 24 hours. Therefore, the recommendation systems are important as they help them make the right choices, without having to expend their cognitive resources.
+# 🎬 Movie Recommender System Using Machine Learning
 
-The purpose of a recommendation system basically is to search for content that would be interesting to an individual. Moreover, it involves a number of factors to create personalised lists of useful and interesting content specific to each user/individual. Recommendation systems are Artificial Intelligence based algorithms that skim through all possible options and create a customized list of items that are interesting and relevant to an individual. These results are based on their profile, search/browsing history, what other people with similar traits/demographics are watching, and how likely are you to watch those movies. This is achieved through predictive modeling and heuristics with the data available.
+A content-based movie recommendation system built using Python and Machine Learning techniques. This project suggests movies similar to the one selected by the user based on features like genres, cast, crew, and overview.
 
-# Types of Recommendation System :
+---
 
-### 1 ) Content Based :
+## 🚀 Project Overview
 
-- Content-based systems, which use characteristic information and takes item attriubutes into consideration .
+This system uses Natural Language Processing (NLP) and similarity scoring to recommend movies. It analyzes movie metadata and computes similarity between movies to suggest the most relevant ones.
 
-- Twitter , Youtube .
+---
 
-- Which music you are listening , what singer are you watching . Form embeddings for the features .
-	
-- User specific actions or similar items reccomendation .
-	
-- It will create a vector of it .
-	
-- These systems make recommendations using a user's item and profile features. They hypothesize that if a user was interested in an item in the past, they will once again be interested in it in the future
-	
-- One issue that arises is making obvious recommendations because of excessive specialization (user A is only interested in categories B, C, and D, and the system is not able to recommend items outside those categories, even though they could be interesting to them).
+## 🧠 How It Works
 
-### 2 ) Collaborative Based :
-		
-- Collaborative filtering systems, which are based on user-item interactions.
-	
-- Clusters of users with same ratings , similar users .
-	
-- Book recommendation , so use cluster mechanism .
-	
-- We take only one parameter , ratings or comments .
-	
-- In short, collaborative filtering systems are based on the assumption that if a user likes item A and another user likes the same item A as well as another item, item B, the first user could also be interested in the second item . 
-	
-- Issues are :
+1. Dataset containing movie details is preprocessed.
+2. Important features like **genres, keywords, cast, crew, and overview** are combined.
+3. Text data is converted into vectors using **CountVectorizer / TF-IDF**.
+4. Similarity is calculated using **cosine similarity**.
+5. Based on user input, top similar movies are recommended.
 
-	- User-Item nXn matrix , so computationally expensive .
+---
 
-	- Only famous items will get reccomended .
+## 🛠️ Tech Stack
 
-	- New items might not get reccomended at all .   
+- Python 
+- Pandas
+- NumPy
+- Scikit-learn
+- Natural Language Processing (NLP)
+- Flask / Streamlit
+- VS code
 
-### 3 ) Hybrid Based :
-	
-- Hybrid systems, which combine both types of information with the aim of avoiding problems that are generated when working with just one kind.
+---
 
-- Combination of both and used now a days .
-
-- Uses : word2vec , embedding .           
+## 📂 Project Structure
+         
 
 # About this project:
 
@@ -123,8 +110,7 @@ streamlit run app.py
 
 
 ```bash
-Author: Bappy Ahmed
-Data Scientist
-Email: entbappy73@gmail.com
+Author: Suhasini
+
 
 ```
