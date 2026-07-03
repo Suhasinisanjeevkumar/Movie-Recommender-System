@@ -37,6 +37,18 @@ This system uses Natural Language Processing (NLP) and similarity scoring to rec
 ---
 
 ## 📂 Project Structure
+
+Movie-Recommender-System-Using-Machine-Learning/
+│
+├── app.py
+├── model.pkl
+├── movies_dict.pkl
+├── similarity.pkl
+├── templates/
+├── static/
+├── dataset/
+├── notebooks/
+└── README.md
          
 
 # About this project:
