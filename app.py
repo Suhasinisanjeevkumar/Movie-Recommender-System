@@ -1,30 +1,57 @@
-'''
-Author: Bappy Ahmed
-Email: entbappy73@gmail.com
-Date: 2021-Nov-15
-Updated by: Malhar Nikam
-'''
+
 
 import pickle
 import streamlit as st
 import requests
 import pandas as pd
 
+
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+
+session = requests.Session()
+
+retry = Retry(
+    total=3,
+    backoff_factor=0.5,
+    status_forcelist=[500, 502, 503, 504]
+)
+
+adapter = HTTPAdapter(max_retries=retry)
+
+session.mount("https://", adapter)
+session.mount("http://", adapter)
+
+
+
+
+
+
+
+
+
+
+
 def fetch_poster(movie_id):
-    """Fetches the movie poster URL from TMDB API."""
-    url = "https://api.themoviedb.org/3/movie/{}?api_key=8265bd1679663a7ea12ac168da84d2e8&language=en-US".format(movie_id)
+    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=801a12ecaa6eadc88f795a9ff0a5ad64&language=en-US"
+
     try:
-        data = requests.get(url)
-        data.raise_for_status()  # Raise an exception for bad status codes
-        data = data.json()
-        poster_path = data.get('poster_path')
+        response = session.get(
+            url,
+            timeout=10,
+            headers={"User-Agent": "Mozilla/5.0"}
+        )
+
+        data = response.json()
+        poster_path = data.get("poster_path")
+
         if poster_path:
-            full_path = "https://image.tmdb.org/t/p/w500/" + poster_path
-            return full_path
-    except requests.exceptions.RequestException as e:
-        st.error(f"Error fetching poster: {e}")
-    # Return a placeholder if the poster is not found or an error occurs
-    return "https://placehold.co/500x750/333/FFFFFF?text=No+Poster"
+            return "https://image.tmdb.org/t/p/w500" + poster_path
+
+    except Exception:
+        pass
+
+    return "https://placehold.co/500x750?text=No+Poster"
 
 
 def recommend(movie):
