@@ -36,19 +36,37 @@ This system uses Natural Language Processing (NLP) and similarity scoring to rec
 
 ---
 
+---
+
 ## 📂 Project Structure
 
+```
 Movie-Recommender-System-Using-Machine-Learning/
 │
-├── app.py
-├── model.pkl
-├── movies_dict.pkl
-├── similarity.pkl
-├── templates/
-├── static/
-├── dataset/
-├── notebooks/
-└── README.md
+├── app.py                    # Main Flask application
+├── model.pkl                 # Trained machine learning model
+├── movies_dict.pkl           # Processed movie dictionary
+├── similarity.pkl            # Cosine similarity matrix
+├── requirements.txt          # Python dependencies
+├── README.md                 # Project documentation
+│
+├── dataset/                  # Dataset files
+│   ├── movies.csv
+│   └── credits.csv
+│
+├── notebooks/                # Jupyter notebooks for preprocessing & model building
+│   └── movie_recommender.ipynb
+│
+├── static/                   # Static assets
+│   ├── css/
+│   ├── images/
+│   └── js/
+│
+└── templates/                # HTML templates
+    └── index.html
+```
+
+---
          
 
 # About this project:
