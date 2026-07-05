@@ -30,7 +30,6 @@ This system uses Natural Language Processing (NLP) and similarity scoring to rec
 - Pandas
 - NumPy
 - Scikit-learn
-- Natural Language Processing (NLP)
 - Flask / Streamlit
 - VS code
 
